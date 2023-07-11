@@ -1,0 +1,106 @@
+#reviews{
+    width: calc(100% - 78px);
+    left: 78px;
+    position: relative;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+#reviews .container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  flex-wrap: wrap;
+}
+#reviews h1{
+  font-size: 30px;
+  font-weight: 400;
+  margin: 20px 0 40px 0;
+  color: var(--dark);
+  text-align: center;
+}
+#reviews .container .stars{
+  text-align: center;
+}
+#reviews .container .review{
+  text-align: center;
+  min-width: fit-content;
+}
+#reviews .container .review .userName{
+  color: var(--dark);
+  font-weight: 400;
+  font-size: 20px;
+}
+#reviews .container .review .reviewMessage{
+  color: var(--darkGrey);
+  font-weight: 300;
+  font-size: 16px;
+}
+#reviews a{
+  color: var(--blue);
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+#reviews a:hover{
+  opacity: 0.6;
+  transition: 0.3s ease-in-out;
+  letter-spacing: 2px;
+}
+#reviews i{
+  color: var(--blue);
+  font-size: 20px;
+}
+@media(max-width:1000px){
+  #reviews{
+    gap: 40px;
+  }
+  #reviews h1{
+    font-size: 24px;
+    margin: 10px 0 20px 0;
+  }
+  #reviews .container .review .userName{
+    font-size: 18px;
+  }
+  #reviews .container .review .reviewMessage{
+    font-size: 16px;
+  }
+  #reviews i{
+    font-size: 18px;
+  }
+  #reviews a{
+    font-size: 18px;
+  }
+}
+@media (max-width:600px) {
+  #reviews{
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    gap: 25px;
+  }
+  #reviews .container{
+    justify-content: center;
+  }
+  #reviews h1{
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+  }
+  #reviews .container .review .userName{
+    font-size: 14px;
+  }
+  #reviews .container .review .reviewMessage{
+    font-size: 13px;
+  }
+  #reviews i{
+    font-size: 16px;
+  }
+  #reviews a{
+    font-size: 12px;
+  }
+  }

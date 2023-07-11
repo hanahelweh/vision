@@ -1,0 +1,185 @@
+#ourServices{
+  width: calc(100% - 78px);
+  left: 78px;
+  position: relative;
+  padding: 100px;
+  padding-top: 0;
+  height: fit-content;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+#ourServices .boxes{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((80% / 3));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: 0;
+  gap: 50px;
+  place-items: center;
+  min-height: 600px;
+  padding: 0 30px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+#ourServices h1{
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--dark);
+  text-align: center;
+}
+
+#ourServices .boxes::-webkit-scrollbar{
+  display: none;
+}
+#ourServices .boxes.dragging{
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+#ourServices .boxes.dragging .box{
+  cursor: grab;
+  user-select: none;
+}
+#ourServices .box{
+  background: var(--dark);
+  height: 500px;
+  color: var(--white);
+  padding: 50px 30px;
+  text-align: justify;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  min-width: 300px;
+}
+#ourServices .box h2{
+  font-size: 23px;
+  font-weight: 400;
+}
+#ourServices .box p{
+  font-size: 16px;
+}
+#ourServices .box i{
+  font-size: 38px;
+  color: var(--white);
+  display: grid;
+  place-items: center;
+}
+#ourServices .icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 40%, var(--white) 60%);
+  background-size: 200px;
+  background-position: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.2s ease-in-out;
+}
+#ourServices .box:hover{
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+#ourServices .box::before {
+  content: "";
+  position: absolute;
+  height: 22%;
+  width: 100%;
+  background-color: var(--blue);
+  bottom: 0;
+  right: 0;
+  transform: translateY(90px);
+  border-radius: 100%;
+  transition: all 0.7s ease-in-out;
+}
+#ourServices .box:hover::before {
+  transform: scale(9) translate(-20px);
+}
+#ourServices .box:hover .icon {
+  background-position: -120px;
+  transition: all 1.2s ease;
+}
+#ourServices .box:hover i{
+  color: var(--blue);
+}
+#ourServices .box:hover::before{
+  background-color: var(--white);
+  opacity: 0.1;
+}
+#ourServices i{
+  font-size: 52px;
+  color: var(--blue);
+}
+#ourServices .arrow{
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+#ourServices .arrow:hover{
+  transform: scale(1.01);
+  transition: all 0.5s ease-in-out;
+}
+#ourServices .arrow.left{
+  left: 40px;
+  z-index: 1;
+}
+#ourServices .arrow.right{
+  right: 40px;
+}
+@media(max-width:1400px){
+  #ourServices .boxes{
+    grid-auto-columns: calc((90% / 2));
+  }
+}
+@media(max-width:1000px){
+  #ourServices .boxes{
+    grid-auto-columns: 90%;
+  }
+  #ourServices h1{
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+}
+@media(max-width:750px){
+  #ourServices .boxes{
+    grid-auto-columns: 100%;
+  }
+  #ourServices .box:hover{
+    transform: scale(1.05);
+  }
+  #ourServices .box h2{
+    font-size: 20px;
+  }
+  #ourServices .box p{
+    font-size: 14px;
+  }
+  #ourServices .box i{
+    font-size: 28px;
+  }
+}
+@media(max-width:600px){
+  #ourServices{
+    left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  #ourServices .boxes{
+    grid-auto-columns: 100%;
+  }
+  #ourServices .arrow{
+    bottom: 0;
+  }
+}

@@ -1,0 +1,161 @@
+#homeAbout {
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 78px;
+  width: calc(100% - 78px);
+}
+
+#homeAbout .about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#homeAbout .container {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#homeAbout .left,
+#homeAbout .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#homeAbout .img {
+  position: relative;
+  width: 85%;
+  height: 100%;
+  min-width: 250px;
+  max-width: 550px;
+  max-height: 350px;
+}
+
+#homeAbout .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#homeAbout .img::before {
+  content: '';
+  position: absolute;
+  left: -35px;
+  top: 25px;
+  border: 4px solid var(--grey);
+  z-index: -1;
+  width: 97%;
+  height: 97%;
+  border-radius: 5px;
+}
+
+#homeAbout .right {
+  position: relative;
+}
+
+#homeAbout .right::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100px;
+  height: 4px;
+  background: var(--darkGrey);
+}
+
+#homeAbout .heading h5 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-top: 20px;
+  color: var(--darkGrey);
+}
+
+#homeAbout .heading h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 20px 0 40px 0;
+  color: var(--dark);
+}
+
+#homeAbout .heading p {
+  margin-bottom: 20px;
+  line-height: 25px;
+  color: var(--grey);
+  text-align: justify;
+}
+
+/* Media query for small screens */
+@media (max-width: 1000px) {
+  #homeAbout .container {
+    flex-direction: column;
+  }
+
+  #homeAbout .left,
+  #homeAbout .right {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #homeAbout .left {
+    margin-bottom: 50px;
+  }
+  #homeAbout .heading h2 {
+    font-size: 24px;
+    margin: 20px 0 40px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #homeAbout .img::before{
+    display: none;
+  }
+  #homeAbout .left {
+    margin-bottom: 0px;
+  }
+  #homeAbout .heading h2 {
+    font-size: 20px;
+    margin: 10px 0 15px 0;
+  }
+  #homeAbout .heading h5 {
+    padding-top: 20px;
+  }
+  #homeAbout .heading p {
+    margin-bottom: 15px;
+    line-height: 25px;
+  }
+}
+@media (max-width: 600px) {
+
+  #homeAbout {
+    width: 100%;
+    left: 0;
+  }
+  
+  #homeAbout .heading h5 {
+    font-size: 12px;
+  }
+  
+  #homeAbout .heading h2 {
+    font-size: 20px;
+  }
+  
+  #homeAbout .heading p {
+    font-size: 12px;
+  }
+}

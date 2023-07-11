@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/QuestionAnswer.css">
+  <title>Accordion Example</title>
+  <style>
+    /* Additional CSS styles */
+  </style>
+</head>
+<body>
+  <div id="QuestionAnswer">
+    <div class="container">
+      <h1>Know More About Us</h1>
+      <ul id="vision">
+        <li>
+          <div class="box">
+            <label for="first">Who We Are?</label>
+          </div>
+          <input type="checkbox" name="QuestionAnswer" id="first">
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <label for="second">What We Offer?</label>
+          </div>
+          <input type="checkbox" name="QuestionAnswer" id="second">
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <label for="third">What Are Our Services?</label>
+          </div>
+          <input type="checkbox" name="QuestionAnswer" id="third">
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <label for="fourth">Why You Should Choose Us?</label>
+          </div>
+          <input type="checkbox" name="QuestionAnswer" id="fourth">
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <label for="fifth">How To Connect With Us?</label>
+          </div>
+          <input type="checkbox" name="QuestionAnswer" id="fifth">
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Get all the list items
+const listItems = document.querySelectorAll('#vision li');
+
+// Add click event listeners to each list item
+listItems.forEach((item) => {
+  const checkbox = item.querySelector('input[type="checkbox"]');
+  const content = item.querySelector('.content');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      // Open the clicked item
+      content.style.maxHeight = '100%';
+      content.style.padding = '10px 10px 20px';
+    } else {
+      // Close the clicked item
+      content.style.maxHeight = '0';
+      content.style.padding = '0 10px';
+    }
+
+    // Close other items
+    listItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        const otherCheckbox = otherItem.querySelector('input[type="checkbox"]');
+        const otherContent = otherItem.querySelector('.content');
+        otherCheckbox.checked = false;
+        otherContent.style.maxHeight = '0';
+        otherContent.style.padding = '0 10px';
+      }
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

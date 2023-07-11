@@ -1,0 +1,121 @@
+#QuestionAnswer{
+  width: calc(100% - 78px);
+  left: 78px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+#QuestionAnswer .container{
+  width: 97%;
+  background-color: var(--grey);
+  padding: 30px;
+  position: relative;
+  height: 100%;
+}
+#QuestionAnswer .container::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 50px 50px 0;
+  border-style: solid;
+  border-color: #fff #fff var(--darkGrey) var(--darkGrey);
+  background: var(--darkGrey);
+  display: block;
+  width: 0;
+}
+#QuestionAnswer .container h1{
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  color: var(--dark);
+  font-size: 30px;
+}
+#vision li{
+  list-style: none;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: var(--white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+#vision li:hover{
+  opacity: 0.8;
+}
+#vision li label{
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#vision .content p{
+  color: var(--darkGrey);
+  font-size: 15px;
+  padding: 5px 0 10px 0;
+}
+#vision label::before{
+  content: '>';
+  font-size: 22px;
+  font-weight: 500;
+  margin-right: 20px;
+  color: var(--blue);
+}
+#vision .content{
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0s, padding 0.5s;
+}
+
+#vision input[type="checkbox"]{
+  display: none;
+}
+
+#vision input[type="checkbox"]:checked ~ .content{
+  max-height: 100%;
+  padding: 10px 10px 10px;
+}
+
+@media(max-width:1000px){
+  #QuestionAnswer .container{
+    padding: 30px;
+  }
+  #QuestionAnswer .container h1{
+    font-size: 24px;
+  }
+}
+@media(max-width:600px){
+  #QuestionAnswer{
+    left: 0;
+    width: 100%;
+  }
+  #vision li label{
+    font-size: 14px;
+  }
+  #vision .content p{
+    font-size: 12px;
+  }
+  #vision li label{
+    padding: 2px;
+  }
+  #vision li{
+    margin-bottom: 7px;
+    padding: 15px;
+  }
+  #QuestionAnswer .container::before{
+    border-width: 0 30px 30px 0;
+  }
+    #QuestionAnswer .container h1{
+    font-size: 20px;
+  }
+}

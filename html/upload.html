@@ -1,0 +1,379 @@
+<!--<?php
+require_once 'connection.php';
+if(isset($_POST["submit"])){
+  $productname = $_POST["productname"];
+  $price = $_POST["price"];
+  $discount = $_POST["discount"];
+  //For uploads photos
+  $upload_dir = "uploads/"; //this is where the uploaded photo stored
+  $product_image = $upload_dir.$_FILES["imageUpload"]["name"];
+  $upload_dir.$_FILES["imageUpload"]["name"];
+  $upload_file = $upload_dir.basename($_FILES["imageUpload"]["name"]);
+  $imageType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION)); //used to detected the image format
+  $check = $_FILES["imageUpload"]["size"]; // to detect the size of the image
+  $upload_ok = 0;
+  if(file_exists($upload_file)){
+      echo "<script>alert('The file already exist')</script>";
+      $upload_ok = 0;
+  }else{
+      $upload_ok = 1;
+      if($check !== false){
+        $upload_ok = 1;
+        if($imageType == 'jpg' || $imageType == 'png' || $imageType == 'jpeg' || $imageType == 'gif'){
+            $upload_ok = 1;
+        }else{
+            echo '<script>alert("please change the image format")</script>';
+        }
+      }else{
+          echo '<script>alert("The photo size is 0 please change the photo ")</script>';
+          $upload_ok = 0;
+      }
+  }
+  if($upload_ok == 0){
+     echo '<script>alert("sorry your file is doesn\'t uploaded. Please try again")</script>';
+  }else{
+      if($productname != "" && $price !=""){
+          move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
+          $sql = "INSERT INTO product(product_name,price,discount,product_image)
+          VALUES('$productname',$price,$discount,'$product_image')";
+          if($conn->query($sql) === TRUE){
+              echo "<script>alert('your product uploaded successfully')</script>";
+          }
+      }
+  }
+}
+?>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload</title>
+  <link rel="stylesheet" href="../css/upload.css" />
+  <link rel="stylesheet" href="../css/button.css" />
+</head>
+
+<body>
+  <!--<?php
+        include_once 'header.php';
+    ?>-->
+
+  <section id="uploadContainer">
+    <div id="navbar"></div>
+    <div class="parent">
+      <div class="containerLeft">
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          <div class="progress-step progress-step-active" data-title="General information"></div>
+          <div class="progress-step" data-title="Features"></div>
+          <div class="progress-step" data-title="Images"></div>
+          <div class="progress-step" data-title="Location & additional informations "></div>
+        </div>
+      </div>
+      <div class="container">
+        <form class="form" action="upload.php" method="POST" enctype="multipart/form-data">
+          <div id="page1" class="page">
+            <div class="pageContain">
+              <div class="top">
+                <div class="prBar"></div>
+                <div class="gap">
+                  <label for="inputField">Listing For</label>
+                  <div class="selectBox">
+                    <select name="p_listing">
+                      <option hidden disabled selected>Select an option</option>
+                      <option value="1">Sale</option>
+                      <option value="2">Rental</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Title</label>
+                    <input type="text" name="p_title" required placeholder="Enter title" />
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Description</label>
+                    <textarea name="p_description" required placeholder="Enter Description" style="height: 105px;"></textarea>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Property Type</label>
+                  <div class="selectBox">
+                    <select name="p_type">
+                      <option hidden disabled selected>Select property type</option>
+                      <option value="1">Residential</option>
+                      <option value="2">Land</option>
+                      <option value="..">...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Property Category</label>
+                  <div class="selectBox">
+                    <select name="p_category">
+                      <option hidden disabled selected>Select property category</option>
+                      <option value="1">Apartment</option>
+                      <option value="2">House</option>
+                      <option value="..">...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Size</label>
+                    <input type="number" name="p_size" required placeholder="Enter Size"></input>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="navigation">
+                  <span></span>
+                  <button class="btn" id="nextButton" onclick="nextPage()">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="page2" class="page">
+            <div class="pageContain">
+              <div class="top">
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField"> Bedrooms</label>
+                    <input type="number" name="p_bedrooms" required placeholder="Select number of bedrooms" />
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Property Bathrooms</label>
+                    <input type="number" name="p_bathrooms" required placeholder="Select number of Bathrooms" />
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField"> Furnisched</label>
+                  <div class="selectBox">
+                    <select name="p_furnished">
+                      <option hidden disabled selected>Is it Furnisched?</option>
+                      <option value="2">Yes</option>
+                      <option value="1">No</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Level of Finisch</label>
+                  <div class="selectBox">
+                    <select name="p_finish">
+                      <option hidden disabled selected>Select level of Finisch</option>
+                      <option value="1">1</option>
+                      <option value="2">2 ..</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Special Features</label>
+                  <div class="flex">
+                    <div class="column">
+                      <label class="Mcheckbox left">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="1" />
+                        <span class="checkmark"></span>
+                        Balconies &nbsp;
+                      </label>
+                      <label class="Mcheckbox middle">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="2" />
+                        <span class="checkmark"></span>
+                        Elevator &nbsp;
+                      </label>
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="3" />
+                        <span class="checkmark"></span>
+                        Parking &nbsp;
+                      </label>
+                    </div>
+                    <div class="column">
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="4" />
+                        <span class="checkmark"></span>
+                        Generator &nbsp;
+                      </label>
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="5" />
+                        <span class="checkmark"></span>
+                        Security System &nbsp;
+                      </label>
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="6" />
+                        <span class="checkmark"></span>
+                        Heating System &nbsp;
+                      </label>
+                    </div>
+                    <div class="column">
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value="7" />
+                        <span class="checkmark"></span>
+                        Storage Room &nbsp;
+                      </label>
+                      <div class="column">
+                        <label class="Mcheckbox right">
+                          <input type="checkbox" id="myCheckbox" name="p_special" value="8" />
+                          <span class="checkmark"></span>
+                          Near Supermarkets &nbsp;
+                        </label>
+                      <label class="Mcheckbox right">
+                        <input type="checkbox" id="myCheckbox" name="p_special" value=".." />
+                        <span class="checkmark"></span>
+                        Other &nbsp;
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Earliest Sale Date</label>
+                    <input type="date" placeholder="Enter earliset date.." required />
+                  </div>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="navigation">
+                  <button class="btn" onclick="previousPage()">Previous</button>
+                  <button class="btn" id="nextButton" onclick="nextPage()">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="page3" class="page">
+            <div class="pageContain">
+              <div class="top">
+                <div class="gap">
+                  <label class="uploadImgTitle">Upload your image</label>
+                  <div class="uploadImg">
+                    <label class="dropContainer">
+                      <span class="dropTitle">Drop files here</span>
+                      or
+                      <input type="file" name="imageUpload" accept="image/*" required id="imageUpload">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="navigation">
+                  <button class="btn" onclick="previousPage()">Previous</button>
+                  <button class="btn" id="nextButton" onclick="nextPage()">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="page4" class="page">
+            <div class="pageContain">
+              <div class="top">
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Country</label>
+                    <input type="text" placeholder="Country.." required />
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">District</label>
+                    <input type="text" placeholder="District.." required />
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Address</label>
+                    <input type="text" placeholder="Address.." required />
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Displayed Currency</label>
+                  <div class="selectBox">
+                    <select name="p_currency">
+                      <option hidden disabled selected>Choose a currency</option>
+                      <option value="1">USD</option>
+                      <option value="2">Euro</option>
+                      <option value="..">...</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="gap">
+                  <div class="inputBox">
+                    <label for="inputField">Price</label>
+                    <input type="number" name="p_price" required placeholder="Enter Price"></input>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Acceptable Payment Methods</label>
+                  <div class="flex">
+                    <label class="Mcheckbox left">
+                      <input type="checkbox" id="myCheckbox" name="p_payment" value="1" />
+                      <span class="checkmark"></span>
+                      LBP &nbsp;
+                    </label>
+                    <label class="Mcheckbox middle">
+                      <input type="checkbox" id="myCheckbox" name="p_payment" value="2" />
+                      <span class="checkmark"></span>
+                      USD &nbsp;
+                    </label>
+                    <label class="Mcheckbox right">
+                      <input type="checkbox" id="myCheckbox" name="p_payment" value=".." />
+                      <span class="checkmark"></span>
+                      .. &nbsp;
+                    </label>
+                  </div>
+                </div>
+                <div class="gap">
+                  <label for="inputField">Displayed Contact Method</label>
+                  <div class="selectBox">
+                    <select name="p_contact">
+                      <option hidden disabled selected>Select contact method</option>
+                      <option value="1">Phone</option>
+                      <option value="2">Email</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="navigation">
+                  <button class="btn" onclick="previousPage()">Previous</button>
+                  <button type="submit" value="Upload" name="submit" class="btn">Upload</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    var productname = document.getElementById("productname");
+    var price = document.getElementById("price");
+    var discount = document.getElementById("discount");
+    var choose = document.getElementById("choose");
+    var uploadImage = document.getElementById("imageUpload");
+
+    function upload() {
+      uploadImage.click();
+    }
+
+    uploadImage.addEventListener("change", function () {
+      var file = this.files[0];
+      if (productname.value == "") {
+        productname.value = file.name;
+      }
+      choose.innerHTML = "You can change(" + file.name + ") picture";
+    });
+    
+  </script>
+  <script src="../javaScript/navbar.js"></script>
+  <script src="../javaScript/upload.js"></script>
+</body>
+
+</html>

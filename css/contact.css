@@ -1,0 +1,197 @@
+#contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 78px;
+  width: calc(100% - 78px);
+  position: relative;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(27, 34, 49, 0.9), rgba(27, 34, 49, 0.9)), url(../images/contact.jpeg);
+  background-size: cover;
+}
+#contact .container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  gap: 100px;
+  max-width: 90%;
+  min-width: 90%;
+}
+#contact a, h1, h3, p{
+  text-decoration: none;
+  color: var(--grey);
+}
+#contact h1{
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 6px;
+  margin-bottom: 25px;
+}
+#contact h3{
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--blue);
+}
+#contact p{
+  font-size: 16px;
+  font-weight: 400;
+}
+#contact .container .title{
+  width: fit-content;
+  text-align: center;
+}
+#contact .container .contentForm{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+#contact .container .contentForm .content{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#contact .container .contentForm .contentInfo{
+  display: flex;
+  align-items: center;
+}
+#contact .container .contentForm .contentInfo .icon{
+  margin-right: 20px;
+}
+#contact .container .contentForm .contentInfo .icon i{
+  font-size: 28px;
+  color: var(--blue);
+}
+#contact .container .contentForm .form{
+  width: 400px;
+}
+#contact .container .contentForm .form form,
+#contact .container .contentForm .form form .inputs input,
+#contact .container .contentForm .form form .inputs textarea
+{
+  width: 100%;
+}
+#contact .container .contentForm .form form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#contact .container .contentForm .form form .inputs{
+  position: relative;
+}
+#contact .container .contentForm .form form .inputs input,
+#contact .container .contentForm .form form .inputs textarea {
+  border: solid 1px var(--grey);
+  border-radius: 5px;
+  background: none;
+  padding: 14px;
+  font-size: 18px;
+  color: var(--darkGrey);
+  transition: border 0.4s;
+}
+#contact .container .contentForm .form form .inputs .contactLabel {
+  position: absolute;
+  left: 25px;
+  color: var(--grey);
+  transform: translateY(50%);
+  transition: 0.4s;
+  font-size: 18px;
+}
+#contact .container .contentForm .form form .inputs input:valid ~ label,
+#contact .container .contentForm .form form .inputs textarea:valid ~ label,
+#contact .container .contentForm .form form .inputs input:focus ~ label,
+#contact .container .contentForm .form form .inputs textarea:focus ~ label {
+  color: var(--white);
+  transform: translateY(-50%) scale(0.9);
+  background-color: var(--blue);
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+#contact .container .contentForm .form form .inputs input:focus,
+#contact .container .contentForm .form form .inputs textarea:focus,
+#contact .container .contentForm .form form .inputs input:valid,
+#contact .container .contentForm .form form .inputs textarea:valid {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+#contact .container .contentForm .form form .inputs textarea {
+  resize: none;
+}
+#contact .btn{
+  color: var(--dark) !important;
+  background: var(--white) !important;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media(max-width:1100px){
+  #contact .container .contentForm{
+    flex-direction: column;
+    gap: 30px;
+  }
+  #contact .container{
+    gap: 30px;
+    max-width: 100%;
+    padding: 30px;
+  }
+  #contact .container .contentForm .content{
+    order: 3;
+  }
+  #contact .container .contentForm .content{
+    gap: 10px;
+  }
+  #contact h1{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  #contact h3{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  #contact p{
+    font-size: 14px;
+  }
+  #contact .container .contentForm .form form .inputs input,
+  #contact .container .contentForm .form form .inputs textarea {
+    padding: 14px;
+    font-size: 14px;
+  }
+  #contact .container .contentForm .contentInfo .icon i{
+    font-size: 24px;
+  }
+  #contact .container .contentForm .form form .inputs .contactLabel {
+    font-size: 14px;
+  }
+}
+@media(max-width:600px){
+  #contact {
+    left: 0;
+    width: 100%;
+    top: 70px;
+    min-height: calc(100vh - 70px);
+  }
+  #contact .container{
+    padding: 10px;
+    gap: 15px;
+  }
+  #contact .container .contentForm{
+    gap: 15px;
+  }
+  #contact .container .contentForm .content{
+    gap: 5px;
+  }
+  #contact .container .contentForm .form{
+    width: 280px;
+  }
+  #contact h1{
+    margin-bottom: 2px;
+  }
+}

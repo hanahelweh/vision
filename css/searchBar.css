@@ -1,0 +1,78 @@
+
+#searchBar .searchBar{
+background-color: var(--white);
+width: fit-content;
+margin: 3px auto;
+padding: 10px 10px 6px 30px;
+border-radius: 25px;
+height: fit-content;
+max-width: 100%;
+}
+
+#searchBar .searchBar form{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  gap: 70px;
+  width: 100%;
+}
+
+#searchBar .searchBar form input, select{
+  display: block;
+  border: 0;
+  outline: none;
+  background: transparent;
+  height: 30px;
+  color: grey;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#searchBar .searchBar form button{
+  background-color: black;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}
+#searchBar .searchBar form button:hover{
+  opacity: 0.8;
+  transition: 0.5s ease-in-out;
+}
+#searchBar .searchBar form button i{
+  font-size: 24px;
+  color: whitesmoke;
+  text-align: center !important;
+}
+#searchBar .searchBar form label{
+  font-weight: 400;
+  font-size: 17px;
+}
+.option{
+  width: 160px;
+}
+@media(max-width:810px){
+  #searchBar .searchBar{
+    padding: 25px;
+  }
+  #searchBar .searchBar form label{
+    font-weight: 300;
+    font-size: 14px;
+  }
+  #searchBar .searchBar form input, select{
+    font-size: 12px;
+  }
+  #searchBar .searchBar form button i{
+  font-size: 20px;
+}
+}
+@media(max-width:600px){
+  #searchBar .searchBar form{
+    gap: 20px;
+  }
+  .option, .searchElement{
+    width: 100%;
+  }
+
+}
