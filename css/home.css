@@ -46,6 +46,24 @@ html{
 .chat:hover{
   background-color: var(--darkGrey);
 }
+.sectionTitle{
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--dark);
+  text-align: center;
+  position: relative;
+}
+.sectionTitle::after{
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid var(--blue);
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+
+}
 #home .container {
   height: 100vh;
   left: 78px;

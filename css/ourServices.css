@@ -41,13 +41,7 @@
   text-align: center;
   overflow: hidden;
   min-width: 300px;
-}
-#ourServices h1{
-  margin-bottom: 50px;
-  font-size: 30px;
-  font-weight: 400;
-  color: var(--dark);
-  text-align: center;
+  max-width: 350px;
 }
 
 #ourServices .boxes::-webkit-scrollbar{

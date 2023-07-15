@@ -61,7 +61,7 @@ a{
 #footer .leftPart i:hover{
   color: var(--blue);
 }
-#footer .leftPart .icons .icon{
+#footer .leftPart .icons .footerIcon{
   position: relative;
   background-color: var(--white);
   border-radius: 50%;
@@ -73,7 +73,7 @@ a{
   flex-direction: column;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
-#footer .leftPart .icons .icon .popup{
+#footer .leftPart .icons .footerIcon .popup{
   position: absolute;
   top: 0;
   font-size: 14px;
@@ -84,7 +84,7 @@ a{
   pointer-events: none;
   opacity: 0;
 }
-#footer .leftPart .icons .icon .popup::before{
+#footer .leftPart .icons .footerIcon .popup::before{
   position: absolute;
   content: '';
   height: 5px; width: 8px;
@@ -93,7 +93,7 @@ a{
   left: 50%;
   transform: translate(-50%) rotate(45deg);
 }
-#footer .leftPart .icons .icon:hover .popup{
+#footer .leftPart .icons .footerIcon:hover .popup{
   top: -50px;
   opacity: 1;
   pointer-events: none;
@@ -109,7 +109,7 @@ a{
     color: var(--white);
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -125,6 +125,7 @@ a{
     color: var(--grey);
     font-size: 14px;
     text-align: center;
+    align-items: flex-end;
 }
 
 
@@ -193,6 +194,7 @@ a{
   #footer .centerPart{
     order: 3;
   }
+
 }
 @media (max-width:600px) {
 #footer{
@@ -209,6 +211,6 @@ a{
     font-size: 20px;
   }
   #footer .centerPart .links {
-    gap: 7px;
+    gap: 8px;
 }
 }

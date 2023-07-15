@@ -19,13 +19,6 @@
   position: relative;
   flex-wrap: wrap;
 }
-#reviews h1{
-  font-size: 30px;
-  font-weight: 400;
-  margin: 20px 0 40px 0;
-  color: var(--dark);
-  text-align: center;
-}
 #reviews .container .stars{
   text-align: center;
 }

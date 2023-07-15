@@ -53,6 +53,7 @@ if(isset($_POST["submit"])){
   <title>Upload</title>
   <link rel="stylesheet" href="../css/upload.css" />
   <link rel="stylesheet" href="../css/button.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
 </head>
 
 <body>
@@ -143,13 +144,13 @@ if(isset($_POST["submit"])){
               <div class="top">
                 <div class="gap">
                   <div class="inputBox">
-                    <label for="inputField"> Bedrooms</label>
+                    <label for="inputField">Bedrooms</label>
                     <input type="number" name="p_bedrooms" required placeholder="Select number of bedrooms" />
                   </div>
                 </div>
                 <div class="gap">
                   <div class="inputBox">
-                    <label for="inputField">Property Bathrooms</label>
+                    <label for="inputField">Bathrooms</label>
                     <input type="number" name="p_bathrooms" required placeholder="Select number of Bathrooms" />
                   </div>
                 </div>
@@ -372,7 +373,7 @@ if(isset($_POST["submit"])){
     });
     
   </script>
-  <script src="../javaScript/navbar.js"></script>
+  <script src="../javaScript/import.js"></script>
   <script src="../javaScript/upload.js"></script>
 </body>
 
