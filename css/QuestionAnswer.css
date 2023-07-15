@@ -6,7 +6,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  min-height: 100vh;
+  background-color: var(--grey);
 }
 #QuestionAnswer .container{
   width: 97%;
@@ -15,23 +16,11 @@
   position: relative;
   height: 100%;
 }
-#QuestionAnswer .container::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-width: 0 50px 50px 0;
-  border-style: solid;
-  border-color: #fff #fff var(--darkGrey) var(--darkGrey);
-  background: var(--darkGrey);
-  display: block;
-  width: 0;
-}
 #QuestionAnswer .container h1{
   font-weight: 400;
   text-align: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: var(--dark);
   font-size: 30px;
 }

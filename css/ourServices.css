@@ -24,6 +24,24 @@
   scroll-behavior: smooth;
   width: 100%;
 }
+#ourServices .box{
+  background: var(--dark);
+  height: 500px;
+  color: var(--white);
+  padding: 50px 30px;
+  text-align: justify;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  min-width: 300px;
+}
 #ourServices h1{
   margin-bottom: 50px;
   font-size: 30px;
@@ -43,25 +61,7 @@
   cursor: grab;
   user-select: none;
 }
-#ourServices .box{
-  background: var(--dark);
-  height: 500px;
-  color: var(--white);
-  padding: 50px 30px;
-  text-align: justify;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  font-size: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  overflow: hidden;
-  scroll-snap-align: start;
-  min-width: 300px;
-}
+
 #ourServices .box h2{
   font-size: 23px;
   font-weight: 400;
@@ -169,6 +169,9 @@
   #ourServices .box i{
     font-size: 28px;
   }
+  #ourServices .box{
+    min-width: 280px;
+  }
 }
 @media(max-width:600px){
   #ourServices{
@@ -176,10 +179,11 @@
     width: 100%;
     padding: 20px;
   }
-  #ourServices .boxes{
-    grid-auto-columns: 100%;
-  }
   #ourServices .arrow{
     bottom: 0;
   }
+  #ourServices .box{
+    min-width: 180px;
+  }
+
 }

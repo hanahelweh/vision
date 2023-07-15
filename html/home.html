@@ -1,75 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/home.css">
-  <link rel="stylesheet" href="../css/button.css" />
-  <link rel="stylesheet" href="../css/ourServices.css">
-  <link
-  href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-  rel="stylesheet"
-/>
-  <title>Vision</title>
-</head>
-<body>
-  <section id="home">
-    <div id="navbar"></div>
-    <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/button.css" />
+    <link rel="stylesheet" href="../css/ourServices.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Vision</title>
+  </head>
+  <body>
+    <div class="chat" onclick="openWhatsApp()">Live Chat</div>
+    <section id="home">
+      <div id="navbar"></div>
+      <div class="container">
+        <div class="main active">
+          <img class="imgSlide" src="../images/background.jpg" alt="" />
+          <div class="linearGradient"></div>
+          <div class="pageContent">
+            <div class="logo"><img src="../images/visionLogo.png" alt="" /></div>
+            <p class="mainTitle">Real Estate</p>
+            <p class="secondTitle">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="homeButtons">
+              <button class="homebtn">Real Estate</button>
+              <button class="homebtn">Graphic Design</button>
+              <button class="homebtn">Construction</button>
+            </div>
+          </div>
+        </div>
         <div class="main">
-          <div id="searchBar"></div>
+          <img class="imgSlide" src="../images/BookCover.jpg" alt="" />
+          <div class="linearGradient"></div>
+          <div class="pageContent">
+            <div class="logo"><img src="../images/visionLogo.png" alt="" /></div>
+            <p class="mainTitle">Graphic Design</p>
+            <p class="secondTitle">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="homeButtons">
+              <button class="homebtn">Real Estate</button>
+              <button class="homebtn">Graphic Design</button>
+              <button class="homebtn">Construction</button>
+            </div>
+          </div>
         </div>
-    </div>
-  </section>
-  <div id="homeAbout1"></div>
-  <div id="services">
-    <div id="ourServices">
-      <h1>Our Services</h1>
-      <div class="arrow left"><i class='bx bxs-left-arrow-circle' id="left"></i></div>
-      <div class="boxes">
-        <div class="box">
-          <div class="icon"><i class='bx bx-building-house'></i></div>
-          <h2>Construction</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="main">
+          <img class="imgSlide" src="../images/contact.jpeg" alt="" />
+          <div class="linearGradient"></div>
+          <div class="pageContent">
+            <div class="logo"><img src="../images/visionLogo.png" alt="" /></div>
+            <p class="mainTitle">Execution</p>
+            <p class="secondTitle">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="homeButtons">
+              <button class="homebtn">Real Estate</button>
+              <button class="homebtn">Graphic Design</button>
+              <button class="homebtn">Execution</button>
+            </div>
+          </div>
         </div>
-        <div class="box">
-          <div class="icon"><i class='bx bx-pencil'></i></div>
-          <h2>Design and build</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="box">
-          <div class="icon"><i class='bx bxs-wrench'></i></div>
-          <h2>Renovation</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="box">
-          <div class="icon"><i class='bx bx-color-fill'></i></div>
-          <h2>Interior and flooring</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="box">
-          <div class="icon"><i class='bx bxs-user-voice'></i></div>
-          <h2>Consulting</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="box">
-          <div class="icon"><i class='bx bx-support' ></i></div>
-          <h2>Support</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="navigation">
+          <div class="btnNavigation active"></div>
+          <div class="btnNavigation"></div>
+          <div class="btnNavigation"></div>
         </div>
       </div>
-      <div class="arrow right"><i class='bx bxs-right-arrow-circle' id="right"></i></div>
+    </section>
+    <div id="homeAbout1"></div>
+    <div id="services">
+      <div id="ourServices">
+        <h1>Our Services</h1>
+        <div class="arrow left">
+          <i class="bx bxs-left-arrow-circle" id="left"></i>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon"><i class="bx bx-building-house"></i></div>
+            <h2>Construction</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon"><i class="bx bx-pencil"></i></div>
+            <h2>Design and build</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon"><i class="bx bxs-wrench"></i></div>
+            <h2>Renovation</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon"><i class="bx bx-color-fill"></i></div>
+            <h2>Interior and flooring</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon"><i class="bx bxs-user-voice"></i></div>
+            <h2>Consulting</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon"><i class="bx bx-support"></i></div>
+            <h2>Support</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+        <div class="arrow right">
+          <i class="bx bxs-right-arrow-circle" id="right"></i>
+        </div>
+      </div>
     </div>
-  </div>
-  <div id="QA"></div>
-  <div id="reviews1"></div>
-  <div id="footer1"></div>
-  <script src="../javaScript/searchBar.js"></script>
-  <script src="../javaScript/navbar.js"></script>
-  <script src="../javaScript/homeAbout.js"></script>
-  <script src="../javaScript/footer.js"></script>
-  <script src="../javaScript/reviews.js"></script>
-  <script src="../javaScript/QuestionAnswer.js"></script>
-  <script src="../javaScript/switchOurServices.js"></script>
-</body>
+    <div id="reviews1"></div>
+    <div id="footer1"></div>
+    <script src="../javaScript/searchBar.js"></script>
+    <script src="../javaScript/navbar.js"></script>
+    <script src="../javaScript/homeAbout.js"></script>
+    <script src="../javaScript/footer.js"></script>
+    <script src="../javaScript/reviews.js"></script>
+    <script src="../javaScript/QuestionAnswer.js"></script>
+    <script src="../javaScript/switchOurServices.js"></script>
+    <script type="text/javaScript">
+            var mains=document.querySelectorAll('.main');
+            var navigationBtns=document.querySelectorAll('.btnNavigation');
+            let currentSlide = 1;
+            var manualNavigation = function(manual) {
+              mains.forEach((main) => {
+                main.classList.remove('active');
+              });
+
+              navigationBtns.forEach((navigationBtn) => {
+                navigationBtn.classList.remove('active');
+              });
+
+              mains[manual].classList.add('active');
+              navigationBtns[manual].classList.add('active');
+            };
+
+            navigationBtns.forEach((navigationBtn, i) => {
+              navigationBtn.addEventListener("click", () => {
+                      manualNavigation(i);
+                      currentSlide = i;
+                    });
+                  });
+
+              var repeat = function(activeClass) {
+                let active = document.getElementsByClassName('active');
+                let i = 1;
+
+                var repeater = () => {
+                  setTimeout(function() {
+                    [...active].forEach((activeSlide) => {
+                      activeSlide.classList.remove('active');
+                    });
+                    mains[i].classList.add('active');
+                    navigationBtns[i].classList.add('active');
+                    i++;
+
+                    if(mains.length == i){
+                      i = 0;
+                    }
+                    if(i >= mains.length){
+                      return;
+                    }
+                    repeater();
+                  }, 8000);
+                }
+                repeater();
+              }
+              repeat();
+
+
+function openWhatsApp() {
+
+  var phoneNumber = "+96170952441";
+  var message = "Hello, I have a question.";
+  var whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+  window.open(whatsappUrl, "_blank");
+}
+    </script>
+  </body>
 </html>

@@ -8,13 +8,13 @@
 }
 /*Start Button CSS*/
 .btn {
-  background-color: black;
+  position: relative;
+  display: inline-block;
+  background-color: var(--dark);
   border: none;
   color: white;
   text-align: center;
   border-radius: 15px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-  position: relative;
   height: fit-content;
   padding: 15px 40px;
   width: fit-content;
@@ -22,35 +22,37 @@
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease;
+  overflow: hidden;
 }
 
 .btn:after {
   content: "";
-  background-color: rgb(255, 255, 255);
+  background-color: var(--grey);
   position: absolute;
   top: 50%;
   left: 50%;
   width: 5px;
   height: 5px;
-  border-radius: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  border-radius: 50%;
 }
 
 .btn:hover:after {
-  animation: ripple_401 1s ease-out;
+  animation: ripple_401 0.8s ease-out;
+
 }
 
 @keyframes ripple_401 {
   0% {
-    width: 5px;
-    height: 5px;
+    width: 0;
+    height: 0;
     opacity: 1;
   }
 
   100% {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 200px;
     opacity: 0;
   }
 }
@@ -61,45 +63,3 @@
   }
 }
 /*End Button CSS*/
-
-/*start Next Button CSS*/
-.next {
-  border: none;
-  background: none;
-}
-
-.next span {
-  text-transform: uppercase;
-  padding-bottom: 5px;
-  letter-spacing: 1px;
-  font-size: 18px;
-  color: var(--blue);
-}
-.next i{
-  font-size: 16px;
-  color: var(--blue);
-}
-
-.underlineAnimation {
-  position: relative;
-  color: var(--blue);
-}
-
-.underlineAnimation:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--blue);
-  transform-origin: bottom right;
-  transition: transform 0.2s ease-out;
-  transform: scaleX(0);
-}
-
-.next:hover .underlineAnimation:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-/*End Next button css/
